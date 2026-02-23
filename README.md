@@ -108,13 +108,20 @@ See `.env` file for configuration options:
 - `MINIO_PUBLIC_URL`: Public URL for accessing images
 
 `THIS IS FOR PUBLIC USAGE, content of the .env:`
-# Server Configuration
+# ==========================================
+# SERVER CONFIGURATION
+# ==========================================
 PORT=3001
 
-# MongoDB
+# ==========================================
+# DATABASE (MongoDB)
+# ==========================================
+# Connection string pour l'instance MongoDB
 MONGODB_URI=mongodb://localhost:27017/heyama
 
-# MinIO Configuration
+# ==========================================
+# STORAGE (MinIO / S3 Compatible)
+# ==========================================
 MINIO_ENDPOINT=localhost
 MINIO_PORT=9000
 MINIO_ACCESS_KEY=minioadmin
@@ -122,39 +129,6 @@ MINIO_SECRET_KEY=minioadmin
 MINIO_USE_SSL=false
 MINIO_BUCKET_NAME=heyamaobjects
 MINIO_PUBLIC_URL=http://localhost:9000
-
-## Testing with cURL
-
-Create an object:
-```bash
-curl -X POST http://localhost:3001/objects \
-  -F "title=Test Object" \
-  -F "description=This is a test" \
-  -F "image=@/path/to/image.jpg"
-```
-
-Get all objects:
-```bash
-curl http://localhost:3001/objects
-```
-
-## Project Structure
-
-```
-src/
-├── app.module.ts          # Main application module
-├── main.ts                # Application entry point
-├── objects/               # Objects module
-│   ├── dto/              # Data transfer objects
-│   ├── schemas/          # MongoDB schemas
-│   ├── objects.controller.ts
-│   ├── objects.service.ts
-│   ├── objects.gateway.ts
-│   └── objects.module.ts
-└── storage/              # MinIO storage module
-    ├── storage.service.ts
-    └── storage.module.ts
-```
 
 ## License
 
