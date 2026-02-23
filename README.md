@@ -107,6 +107,22 @@ See `.env` file for configuration options:
 - `MINIO_BUCKET_NAME`: MinIO bucket name
 - `MINIO_PUBLIC_URL`: Public URL for accessing images
 
+`THIS IS FOR PUBLIC USAGE, content of the .env:`
+# Server Configuration
+PORT=3001
+
+# MongoDB
+MONGODB_URI=mongodb://localhost:27017/heyama
+
+# MinIO Configuration
+MINIO_ENDPOINT=localhost
+MINIO_PORT=9000
+MINIO_ACCESS_KEY=minioadmin
+MINIO_SECRET_KEY=minioadmin
+MINIO_USE_SSL=false
+MINIO_BUCKET_NAME=heyamaobjects
+MINIO_PUBLIC_URL=http://localhost:9000
+
 ## Testing with cURL
 
 Create an object:
